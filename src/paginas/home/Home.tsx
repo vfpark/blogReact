@@ -52,7 +52,7 @@ function Home() {
         </Grid>
         <Grid item xs={6}>
           <img
-            src="https://i.imgur.com/XEmGzkd.png"
+            src="https://ik.imagekit.io/vfpark/Studying-bro.png?updatedAt=1681406998908"
             alt=""
             className='fotoHome'
           />
