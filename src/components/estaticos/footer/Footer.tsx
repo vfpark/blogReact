@@ -4,6 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Typography, Grid } from '@material-ui/core';
 import { Box } from '@mui/material';
+import './Footer.css';
 
 function Footer (){
     return (
@@ -14,7 +15,7 @@ function Footer (){
         justifyContent="center"
         alignItems="center"
       >
-        <Box display={'flex'} alignItems="center" style={{ backgroundColor: "#1d3557", height: '120px' }} width={'100%'} justifyContent={'space-around'}>
+        <Box display={'flex'} alignItems="center" className="box2" width={'100%'} justifyContent={'space-around'}>
           <Box >
             <Box
               paddingTop={1}
@@ -26,7 +27,7 @@ function Footer (){
                 variant="h5"
                 align="center"
                 gutterBottom
-                style={{ color: 'white' }}
+                className="box1"
               >
                 Siga-nos nas redes sociais{' '}
               </Typography>
@@ -36,19 +37,19 @@ function Footer (){
                 href="https://www.facebook.com/generationbrasil"
                 target="_blank"
               >
-                <FacebookIcon style={{ fontSize: 60, color: 'white' }} />
+                <FacebookIcon className="redes" />
               </a>
               <a
                 href="https://www.instagram.com/generationbrasil/"
                 target="_blank"
               >
-                <InstagramIcon style={{ fontSize: 60, color: 'white' }} />
+                <InstagramIcon className="redes" />
               </a>
               <a
                 href="https://www.linkedin.com/school/generationbrasil/"
                 target="_blank"
               >
-                <LinkedInIcon style={{ fontSize: 60, color: 'white' }} />
+                <LinkedInIcon className="redes" />
               </a>
             </Box>
           </Box>
@@ -58,7 +59,7 @@ function Footer (){
                 variant="h5"
                 align="center"
                 gutterBottom
-                style={{ color: 'white' }}
+                className="textos"
                 component={'span'}
               >
                 © 2023 Copyright: {' '}
@@ -68,7 +69,7 @@ function Footer (){
                 <Typography
                   variant="h5"
                   gutterBottom
-                  style={{ color: 'white' }}
+                  className="textos"
                   align="center"
                   component={'span'}
                 >

@@ -1,25 +1,21 @@
-/*
+.caixa{
+    background-color: grey;
+}
+
 .titulo{
-    color:blue;
-    text-align: center;
+    color: white !important;
+    font-weight: bold !important;
 }
 
-.img{
-    width: 500px;
-    height: 500px;
-    display: block;
-    margin: 0 auto;
+.botao{
+    border-color: white !important;
+    background-color: #1d3557;
+    color: white !important;
 }
-*/
 
-/*
-.fotoHome {
-    width: max(350px, 65%);
-    margin: 0 auto;
-    display: block;
-    transform: rotateY(180deg);
-  }
-  */
+.postagens{
+    background-color: white;
+}
 
 .fotoHome {
     width: 100%;
