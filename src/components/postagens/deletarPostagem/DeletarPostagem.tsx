@@ -3,8 +3,53 @@ import {Typography, Button, Card, CardActions, CardContent } from "@material-ui/
 import {Box} from '@mui/material';
 import './DeletarPostagem.css';
 import Postagem from '../../../models/Postagem';
+import { useNavigate, useParams } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
+import { buscaId, deleteId } from '../../../services/Service';
 
 function DeletarPostagem() {
+
+  const history = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+  
+    const {id} = useParams<{id: string}>()
+  
+    const [post, setPosts] = useState<Postagem>();
+  
+    async function getPostById(id: string) {
+      await buscaId(`/postagens/${id}`, setPosts, {
+        headers: {
+          Authorization: token
+        }
+      })
+    }
+
+    useEffect(() => {
+      if (id !== undefined){
+        getPostById(id)
+      }
+    })
+  
+    useEffect(() => {
+      if (token === '') {
+        alert('Você precisa estar logado.');
+        history('/login');
+      } 
+    }, [token]);
+
+    function sim() {
+      deleteId(`/postagem/${id}`, {
+        headers: {
+          Authorization: token
+        }
+      })
+      alert('Postagem deletada com sucesso.')
+      history('/postagem')
+    }
+  
+    function nao(){
+      history('/posts')
+    }
    
   return (
     <>
@@ -16,7 +61,7 @@ function DeletarPostagem() {
                 Deseja deletar a Postagem:
               </Typography>
               <Typography color="textSecondary" >
-              Tema
+              {post?.titulo}
               </Typography>
             </Box>
 
@@ -24,12 +69,12 @@ function DeletarPostagem() {
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-              <Button  variant="contained" className="marginLeft" size='large' color="primary">
+              <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
                 Sim
               </Button>
               </Box>
               <Box>
-              <Button   variant="contained" size='large' color="secondary">
+              <Button onClick={nao} variant="contained" size='large' color="secondary">
                 Não
               </Button>
               </Box>
