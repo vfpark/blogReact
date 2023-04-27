@@ -23,3 +23,7 @@
     display: block;
     transform: rotateY(180deg);
 }
+
+.text-decorator-none{
+    text-decoration: none;
+}
