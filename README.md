@@ -8,4 +8,5 @@
 <li>TypeScript;</li>
 <li>React;</li>
 <li>Material UI;</li>
-<li>Ridux.</li></ul>
+<li>Ridux;</li>
+<li>Deploy no Vercel.</li></ul>
